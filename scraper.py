@@ -16,7 +16,7 @@ def getData():
     resp = resp.split("data = {\"limit\":35,\"calendar\":")
     resp = resp[1].split(";var canadaStart = false")
 
-    return bytes(resp[0], 'utf-8')
+    return bytes(resp[1], 'utf-8')
 
 # to create the initial hash
 currentHash = hashlib.sha224(getData()).hexdigest()
